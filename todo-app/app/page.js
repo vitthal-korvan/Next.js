@@ -1,7 +1,7 @@
-import connectDB from "@/lib/db";
-import Todo from "@/models/Todo";
 import { createTodo } from "@/app/actions";
 import TodoList from "@/components/TodoList";
+import connectDB from "@/lib/db";
+import Todo from "@/models/Todo";
 
 export default async function Home() {
   // 1. Fetch data on the server
@@ -17,21 +17,21 @@ export default async function Home() {
   }));
 
   return (
-    <main className="max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg">
-      <h1 className="text-2xl font-bold mb-4 text-center">My Todo App</h1>
+    <main className="main-container">
+      <h1 className="app-title">My Todo App</h1>
 
       {/* 2. Add Form */}
-      <form action={createTodo} className="flex gap-2 mb-6">
+      <form action={createTodo} className="todo-form">
         <input
           type="text"
           name="text"
           placeholder="Add a new task..."
-          className="flex-1 border p-2 rounded text-black"
+          className="todo-input"
           required
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="add-button"
         >
           Add
         </button>
